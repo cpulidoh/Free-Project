@@ -68,6 +68,8 @@ private void inicializarTablero() {
         return false;
     }
 
+    //prueba paz
+
     private boolean compara(JButton b1, JButton b2, JButton b3) {
         String t1 = b1.getText();
         return !t1.equals("") && t1.equals(b2.getText()) && t1.equals(b3.getText());
