@@ -19,6 +19,7 @@ public Juego(JFrame frame, char jugadorInicial) {
     inicializarTablero();
 }
 
+//commit prueba
 
 private void inicializarTablero() {
 
