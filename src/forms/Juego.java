@@ -1,46 +1,30 @@
-package forms;
 
+package forms;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class Juego {
 
-    private JPanel panelPrincipal;
-    private JButton button1;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JButton button6;
-    private JButton button7;
-    private JButton button8;
-    private JButton button9;
-
-    public Juego(){
-        panelPrincipal.setPreferredSize(new Dimension(800, 800));
-    }
-
     public static void main(String[] args) {
+        //Dar la bienvenida a los jugadores
         JOptionPane.showMessageDialog(null, "Bienvenido al Juego de el Tres en Raya");
-        int seleccion = JOptionPane.showOptionDialog(null, "Elige una opción:", "Opciones",
-                JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE,
-                null, new Object[]{"X", "O"}, null);
+        //hacer que salte una ventana que pregunte a los jugadores sus nombres para registrarlos en la partida
+        String nombreJugador1 = JOptionPane.showInputDialog("Ingrese el nombre del jugador 1 ");
+        String nombreJugador2 = JOptionPane.showInputDialog("Ingrese el nombre del jugador 2 ");
 
-        String opcionElegida = (seleccion == 0) ? "X" : "O";
-        JOptionPane.showMessageDialog(null, "Has elegido " + opcionElegida);
+        //dar los valores de que el jugador 1 siempre sera "X" y el 2 siempre "O"
+        String simboloJugador1 = "X";
+        String simboloJugador2 = "Y";
 
+        //mostrar mensaje de que el jugador con su nombre tiene un simbolo y el otro jugador el otro
+        JOptionPane.showMessageDialog(null, nombreJugador1 + " jugara con: " + simboloJugador1 + " y " +  nombreJugador2 + " jugara con: " + simboloJugador2);
+
+        //mostrar la ventana emergente del juego
         JFrame frame = new JFrame("Juego tres en raya");
-        frame.setContentPane(new Juego().panelPrincipal);
+        frame.setContentPane(new PaneldelJuego(true, nombreJugador1, nombreJugador2).panelPrincipal);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
         frame.setLocation(500, 100);
-
+        frame.setSize(800, 600);
     }
-
-
-
-
 }
